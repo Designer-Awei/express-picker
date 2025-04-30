@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="20" width="260" height="160" rx="16" fill="#e3eefa" stroke="#4a90e2" stroke-width="3"/>
+  <circle cx="150" cy="100" r="40" fill="#7ed957" stroke="#388e3c" stroke-width="3"/>
+  <text x="150" y="105" font-size="20" text-anchor="middle" fill="#333">地图示例</text>
+</svg> 

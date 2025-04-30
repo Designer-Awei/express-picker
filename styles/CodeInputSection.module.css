@@ -1,0 +1,81 @@
+.inputSection {
+  width: 100%;
+}
+
+.inputContainer {
+  width: 100%;
+  display: flex;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.inputWrapper {
+  flex: 1;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  height: 88px;
+  min-height: 88px;
+  max-height: 88px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.ant-input.input,
+.CodeInputSection_input__38bl3 {
+  height: 88px !important;
+  min-height: 88px !important;
+  max-height: 88px !important;
+  padding: 8px 10px !important;
+  line-height: 1.5;
+  resize: none;
+  box-sizing: border-box;
+  overflow-y: auto;
+  vertical-align: top;
+}
+
+.input .ant-input::placeholder {
+  color: #bfbfbf;
+  line-height: 1.5;
+  /* 与输入内容保持一致 */
+}
+
+.buttonsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: stretch;
+  min-width: 96px;
+}
+
+.recognizeButton,
+.uploadButton {
+  width: 100%;
+  min-width: 96px;
+  height: 40px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.recognizeButton {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+.recognizeButton:hover {
+  background-color: #45a049;
+  border-color: #45a049;
+}
+
+.uploadButton {
+  background-color: #fff;
+  border-color: #d9d9d9;
+} 

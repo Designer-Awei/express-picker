@@ -52,5 +52,14 @@ express-picker/
 - SiliconFlow 视觉大模型 API
 - 浏览器原生摄像头 API
 
+## UI自定义说明
+
+### 首页输入区（CodeInputSection）
+- 输入框采用Antd的Input.TextArea组件，已通过style和CSS强制高度固定为88px，内容始终顶部对齐。
+- 输入框placeholder和光标严格对齐顶部。
+- 右侧按钮区为竖直排列，上方为"上传"按钮，下方为"识别"按钮，二者宽度一致。
+- 输入区整体采用卡片式白色背景、圆角和阴影，提升视觉层次。
+- 相关样式详见`styles/CodeInputSection.module.css`。
+
 ---
 > 本项目以两天开发周期为目标，优先保证核心功能可用，非核心功能可后续迭代完善。
