@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+import { DownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import styles from '../styles/Home.module.css';
 
 const MAP_OPTIONS = [
@@ -38,7 +40,9 @@ export default function MapSection() {
             onClick={() => setDropdownOpen(v => !v)}
           >
             <span>{MAP_OPTIONS.find(opt => opt.value === selectedMap)?.label}</span>
-            <span style={{ marginLeft: 12, fontSize: 22, lineHeight: 1 }}>{dropdownOpen ? '▲' : '▼'}</span>
+            <span style={{ marginLeft: 12, fontSize: 20, lineHeight: 1, display: 'flex', alignItems: 'center' }}>
+              <DownOutlined style={{ transition: 'transform 0.2s', transform: dropdownOpen ? 'rotate(180deg)' : 'none' }} />
+            </span>
           </button>
           {dropdownOpen && (
             <div style={{ position: 'absolute', top: 40, left: 0, background: '#fff', border: '1px solid #ddd', borderRadius: 8, boxShadow: '0 2px 8px rgba(0,0,0,0.08)', minWidth: 160 }}>
@@ -56,22 +60,28 @@ export default function MapSection() {
         </div>
         {/* 指北针 */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 2, userSelect: 'none' }}>
-          <svg width="28" height="28" viewBox="0 0 28 28">
-            <g>
-              <line x1="14" y1="22" x2="14" y2="6" stroke="#222" strokeWidth="3" strokeLinecap="round" />
-              <polygon points="14,3 10,9 18,9" fill="#222" />
-            </g>
-          </svg>
+          <ArrowUpOutlined style={{ fontSize: 26, color: '#222', fontWeight: 700 }} />
           <span style={{ fontWeight: 700, fontSize: 26, marginLeft: 2, color: '#222' }}>N</span>
         </div>
       </div>
-      {/* 地图显示区 */}
+      {/* 地图显示区，支持缩放与拖动 */}
       <div style={{ width: '92vw', height: '45vw', background: '#fff', border: '3px solid #222', borderRadius: 18, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <img
-          src={`/assets/${selectedMap}`}
-          alt="地图"
-          style={{ maxWidth: '100%', maxHeight: '100%', display: 'block', objectFit: 'contain', background: '#fff' }}
-        />
+        <TransformWrapper
+          initialScale={1}
+          minScale={0.5}
+          maxScale={4}
+          centerOnInit={true}
+        >
+          <TransformComponent
+            wrapperStyle={{ width: '100%', height: '100%', overflow: 'hidden' }}
+          >
+            <img
+              src={`/assets/${selectedMap}`}
+              alt="地图"
+              style={{ maxWidth: '100%', maxHeight: '100%', display: 'block', objectFit: 'contain', background: '#fff' }}
+            />
+          </TransformComponent>
+        </TransformWrapper>
       </div>
     </div>
   );
