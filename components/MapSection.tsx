@@ -4,10 +4,10 @@ import { DownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import styles from '../styles/Home.module.css';
 
 const MAP_OPTIONS = [
-  { label: '快递中心总图', value: 'demo-map.svg' },
-  { label: '菜鸟驿站', value: 'cainiao.svg' },
-  { label: '韵达京东', value: 'yunda-jd.svg' },
-  { label: '顺丰快递', value: 'sf.svg' },
+  { label: '总图-快递中心', value: 'demo-map.svg' },
+  { label: '分区-菜鸟驿站', value: 'cainiao.svg' },
+  { label: '分区-韵达京东', value: 'yunda-jd.svg' },
+  { label: '分区-顺丰快递', value: 'sf.svg' },
 ];
 
 /**
