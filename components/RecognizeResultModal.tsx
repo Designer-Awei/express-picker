@@ -62,7 +62,7 @@ const RecognizeResultModal: React.FC<RecognizeResultModalProps> = ({ open, cards
       footer={null}
       width={440}
       style={{ top: 60 }}
-      bodyStyle={{ padding: 0, background: '#fafbfc' }}
+      styles={{ body: { padding: 0, background: '#fafbfc' } }}
       destroyOnClose
     >
       <div style={{ padding: '20px 24px 0 24px' }}>

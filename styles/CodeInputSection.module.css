@@ -3,11 +3,12 @@
 }
 
 .inputContainer {
-  width: 100%;
+  width: 92%;
+  margin: 0 auto;
   display: flex;
-  padding: 16px;
   background-color: #fff;
   border-radius: 8px;
+  padding-top: 20px;
 }
 
 .inputWrapper {

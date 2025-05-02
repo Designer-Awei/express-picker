@@ -1,6 +1,8 @@
 const API_KEY = process.env.NEXT_PUBLIC_SF_API_KEY || 'sk-ohegjcstojasnvkdjtbuglohibqwndegkfwnprbvugwoluhv';
 const BASE_URL = 'https://api.siliconflow.cn/v1';
 
+const SYSTEM_PROMPT = '你是一名快递取件助手。请从用户输入的文本或图片中，提取所有快递码及其所属快递分区。快递分区只能为以下三项之一："菜鸟驿站"、"韵达京东"、"顺丰快递"。输出格式要求如下，每行一个快递：[快递分区]（快递码）。只输出提取结果，不要输出其他内容。';
+
 /**
  * 文本识别快递码及分区（系统提示词引导输出[区域]（快递码）格式）
  * @param {string} text - 用户输入文本
@@ -8,7 +10,7 @@ const BASE_URL = 'https://api.siliconflow.cn/v1';
  */
 export async function recognizeExpressByText(text: string): Promise<{code: string, area: string}[]> {
   const messages = [
-    { role: 'system', content: '你是一名快递取件助手。请从用户输入的文本中，提取所有快递码及其所属区域。输出格式要求如下，每行一个快递：[区域]（快递码）。只输出提取结果，不要输出其他内容。' },
+    { role: 'system', content: SYSTEM_PROMPT },
     { role: 'user', content: text }
   ];
   const body = {
@@ -48,13 +50,13 @@ export async function recognizeExpressByImages(base64Images: string[]): Promise<
     const messages = [
       {
         role: 'system',
-        content: '你是一名快递取件助手。请从图片中，提取所有快递码及其所属区域。输出格式要求如下，每行一个快递：[区域]（快递码）。只输出提取结果，不要输出其他内容。'
+        content: SYSTEM_PROMPT
       },
       {
         role: 'user',
         content: [
           ...imageContents,
-          { type: 'text', text: '请识别图片中的快递取件码及其所属区域，输出格式为[区域]（快递码）。' }
+          { type: 'text', text: '请识别图片中的快递取件码及其所属区域，输出格式为[快递分区]（快递码）。' }
         ]
       }
     ];

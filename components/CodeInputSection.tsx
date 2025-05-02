@@ -6,10 +6,18 @@ import RecognizeResultModal, { RecognizeCard } from './RecognizeResultModal';
 import { recognizeExpressByText, recognizeExpressByImages } from '../utils/siliconflow';
 
 /**
+ * CodeInputSection 组件props类型
+ */
+export interface CodeInputSectionProps {
+  onConfirm?: (cards: RecognizeCard[]) => void;
+}
+
+/**
  * 快递码输入区域组件
+ * @param {CodeInputSectionProps} props
  * @returns {JSX.Element} 返回包含输入框和上传按钮的组件
  */
-export default function CodeInputSection() {
+export default function CodeInputSection({ onConfirm }: CodeInputSectionProps) {
   const [textValue, setTextValue] = useState('');
   const [imageFiles, setImageFiles] = useState<File[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -155,11 +163,14 @@ export default function CodeInputSection() {
   };
 
   /**
-   * 弹窗确认（后续可同步到分区3）
+   * 弹窗确认（同步到分区3）
    */
   const handleModalOk = () => {
     setModalOpen(false);
-    // TODO: 同步到分区3
+    if (onConfirm) onConfirm(recognizeCards);
+    setTextValue('');
+    setImageFiles([]);
+    setRecognizeCards([]);
   };
 
   return (
@@ -178,19 +189,22 @@ export default function CodeInputSection() {
           {isTextDisabled && imageFiles.length > 0 && (
             <div style={{
               position: 'absolute',
-              left: 24,
+              left: 34,
               top: 24,
               color: '#888',
               fontSize: 13,
               display: 'flex',
               flexWrap: 'wrap',
-              gap: 8,
-              zIndex: 1
+              zIndex: 1,
+              maxWidth: 'calc(100% - 120px)', // 限制最大宽度，避免溢出
+              wordBreak: 'break-all', // 超长单词换行
+              whiteSpace: 'pre-wrap', // 保证自动换行
+              lineHeight: 1.7
             }}>
               {imageFiles.map((file, idx) => (
-                <span key={file.name + idx} style={{ marginRight: 8 }}>
+                <span key={file.name + idx}>
                   {file.name}
-                  <Button size="small" type="link" onClick={() => handleRemoveImage(idx)} style={{ paddingLeft: 4 }}>
+                  <Button size="small" type="link" onClick={() => handleRemoveImage(idx)} style={{ paddingLeft: 4, paddingRight: 40 }}>
                     移除
                   </Button>
                 </span>
@@ -229,7 +243,11 @@ export default function CodeInputSection() {
         </div>
       </div>
       {/* 错误提示 */}
-      {error && <div style={{ color: 'red', marginTop: 8 }}>{error}</div>}
+      {error && (
+        <div style={{ width: '92%', margin: '8px auto 0 auto', textAlign: 'left' }}>
+          <div style={{ color: 'red' }}>{error}</div>
+        </div>
+      )}
       {/* 识别结果弹窗 */}
       <RecognizeResultModal
         open={modalOpen}
