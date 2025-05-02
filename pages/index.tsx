@@ -15,6 +15,7 @@ import { RecognizeCard } from '@/components/RecognizeResultModal';
 export default function Home() {
   const [pendingDeliveries, setPendingDeliveries] = useState<PendingDelivery[]>([]);
   const [isClient, setIsClient] = useState(false);
+  const [selectedMap, setSelectedMap] = useState('demo-map.svg');
 
   /**
    * 解决服务端渲染问题：标记客户端环境
@@ -96,10 +97,14 @@ export default function Home() {
           <CodeInputSection onConfirm={handleRecognizeConfirm} />
           
           {/* 分区2: 地图显示区域 */}
-          <MapSection />
+          <MapSection selectedMap={selectedMap} onMapChange={setSelectedMap} />
           
           {/* 分区3: 待取快递列表区域 */}
-          <PendingDeliverySection pendingDeliveries={pendingDeliveries} onDelete={handleDeleteDelivery} />
+          <PendingDeliverySection 
+            pendingDeliveries={pendingDeliveries} 
+            onDelete={handleDeleteDelivery} 
+            selectedMap={selectedMap}
+          />
         </div>
       }
       footer={<div className={styles.footer}>© 2025 快速取件导航系统</div>}

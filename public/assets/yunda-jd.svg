@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect x="0" y="0" width="800" height="600" fill="#fffde7"/>
+  
+  <!-- 主体区域 -->
+  <rect x="50" y="50" width="700" height="500" rx="15" fill="#fff9c4" stroke="#fbc02d" stroke-width="3"/>
+  
+  <!-- 标题 -->
+  <text x="400" y="35" font-size="24" text-anchor="middle" font-weight="bold" fill="#f57f17">韵达京东分区布局图</text>
+  
+  <!-- 货架区域 -->
+  <!-- 第一排货架 -->
+  <g transform="translate(150, 100)">
+    <rect x="0" y="0" width="500" height="70" fill="#ffeb3b" stroke="#fdd835" stroke-width="2"/>
+    <text x="250" y="43" font-size="20" text-anchor="middle" fill="#f57f17">韵达快递区 (1-1 至 1-40)</text>
+    
+    <!-- 分隔线 -->
+    <line x1="125" y1="0" x2="125" y2="70" stroke="#fdd835" stroke-width="1"/>
+    <line x1="250" y1="0" x2="250" y2="70" stroke="#fdd835" stroke-width="1"/>
+    <line x1="375" y1="0" x2="375" y2="70" stroke="#fdd835" stroke-width="1"/>
+  </g>
+  
+  <!-- 第二排货架 -->
+  <g transform="translate(150, 200)">
+    <rect x="0" y="0" width="500" height="70" fill="#ffeb3b" stroke="#fdd835" stroke-width="2"/>
+    <text x="250" y="43" font-size="20" text-anchor="middle" fill="#f57f17">韵达快递区 (2-1 至 2-40)</text>
+    
+    <!-- 分隔线 -->
+    <line x1="125" y1="0" x2="125" y2="70" stroke="#fdd835" stroke-width="1"/>
+    <line x1="250" y1="0" x2="250" y2="70" stroke="#fdd835" stroke-width="1"/>
+    <line x1="375" y1="0" x2="375" y2="70" stroke="#fdd835" stroke-width="1"/>
+  </g>
+  
+  <!-- 第三排货架 - 京东 -->
+  <g transform="translate(150, 300)">
+    <rect x="0" y="0" width="500" height="70" fill="#ffd54f" stroke="#ffb300" stroke-width="2"/>
+    <text x="250" y="43" font-size="20" text-anchor="middle" fill="#e65100">京东快递区 (3-1 至 3-40)</text>
+    
+    <!-- 分隔线 -->
+    <line x1="125" y1="0" x2="125" y2="70" stroke="#ffb300" stroke-width="1"/>
+    <line x1="250" y1="0" x2="250" y2="70" stroke="#ffb300" stroke-width="1"/>
+    <line x1="375" y1="0" x2="375" y2="70" stroke="#ffb300" stroke-width="1"/>
+  </g>
+  
+  <!-- 第四排货架 - 京东 -->
+  <g transform="translate(150, 400)">
+    <rect x="0" y="0" width="500" height="70" fill="#ffd54f" stroke="#ffb300" stroke-width="2"/>
+    <text x="250" y="43" font-size="20" text-anchor="middle" fill="#e65100">京东快递区 (4-1 至 4-40)</text>
+    
+    <!-- 分隔线 -->
+    <line x1="125" y1="0" x2="125" y2="70" stroke="#ffb300" stroke-width="1"/>
+    <line x1="250" y1="0" x2="250" y2="70" stroke="#ffb300" stroke-width="1"/>
+    <line x1="375" y1="0" x2="375" y2="70" stroke="#ffb300" stroke-width="1"/>
+  </g>
+  
+  <!-- 服务台 -->
+  <g transform="translate(350, 500)">
+    <rect x="0" y="0" width="100" height="50" rx="10" fill="#fbc02d" stroke="#f57f17" stroke-width="2"/>
+    <text x="50" y="30" font-size="14" text-anchor="middle" fill="#ffffff">服务台</text>
+  </g>
+  
+  <!-- 服务区 - 左侧 -->
+  <g transform="translate(75, 150)">
+    <rect x="0" y="0" width="50" height="120" rx="5" fill="#ffe082" stroke="#ffb300" stroke-width="2"/>
+    <text x="25" y="65" font-size="14" text-anchor="middle" fill="#e65100" transform="rotate(-90, 25, 65)">服务区</text>
+  </g>
+  
+  <!-- 入口 -->
+  <g transform="translate(700, 250)">
+    <rect x="0" y="0" width="60" height="100" fill="#fffde7" stroke="#f57f17" stroke-width="3" stroke-dasharray="8 4"/>
+    <text x="30" y="130" font-size="14" text-anchor="middle" fill="#f57f17">入口</text>
+  </g>
+  
+  <!-- 标注 -->
+  <g transform="translate(75, 300)">
+    <rect x="0" y="0" width="50" height="170" rx="5" fill="#fff9c4" stroke="#fbc02d" stroke-width="1"/>
+    <text x="25" y="25" font-size="12" text-anchor="middle" font-weight="bold" fill="#f57f17">图例</text>
+    
+    <!-- 标注项1 -->
+    <rect x="15" y="40" width="20" height="15" fill="#ffeb3b" stroke="#fdd835" stroke-width="1"/>
+    <text x="25" y="70" font-size="10" text-anchor="middle" fill="#f57f17">韵达区</text>
+    
+    <!-- 标注项2 -->
+    <rect x="15" y="90" width="20" height="15" fill="#ffd54f" stroke="#ffb300" stroke-width="1"/>
+    <text x="25" y="120" font-size="10" text-anchor="middle" fill="#e65100">京东区</text>
+    
+    <!-- 标注项3 -->
+    <rect x="15" y="140" width="20" height="15" fill="#fbc02d" stroke="#f57f17" stroke-width="1"/>
+    <text x="25" y="165" font-size="9" text-anchor="middle" fill="#f57f17">服务台</text>
+  </g>
+  
+  <!-- 底部信息 -->
+  <text x="400" y="580" font-size="12" text-anchor="middle" fill="#f57f17">韵达京东 - 校园快递中心</text>
+</svg> 

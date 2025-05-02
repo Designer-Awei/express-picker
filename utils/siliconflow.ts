@@ -1,7 +1,17 @@
 const API_KEY = process.env.NEXT_PUBLIC_SF_API_KEY || 'sk-ohegjcstojasnvkdjtbuglohibqwndegkfwnprbvugwoluhv';
 const BASE_URL = 'https://api.siliconflow.cn/v1';
 
-const SYSTEM_PROMPT = '你是一名快递取件助手。请从用户输入的文本或图片中，提取所有快递码及其所属快递分区。快递分区只能为以下三项之一："菜鸟驿站"、"韵达京东"、"顺丰快递"。输出格式要求如下，每行一个快递：[快递分区]（快递码）。只输出提取结果，不要输出其他内容。';
+const SYSTEM_PROMPT = `你是一名快递取件助手。请从用户输入的文本或图片中，提取所有快递码及其所属快递分区。
+
+快递分区规则如下：
+1. "菜鸟驿站" - 包含菜鸟、蜂鸟等字样的快递
+2. "韵达京东" - 包含韵达、京东等字样的快递（注意：单独提到"韵达快递"或"京东快递"都属于"韵达京东"分区）
+3. "顺丰快递" - 包含顺丰、圆通、中通等字样的快递
+
+如果用户没有明确提到快递公司，请根据取件码格式和上下文推断分区。
+
+输出格式要求如下，每行一个快递：[快递分区]（快递码）
+只输出提取结果，不要输出其他内容。`;
 
 /**
  * 文本识别快递码及分区（系统提示词引导输出[区域]（快递码）格式）
@@ -14,7 +24,7 @@ export async function recognizeExpressByText(text: string): Promise<{code: strin
     { role: 'user', content: text }
   ];
   const body = {
-    model: 'THUDM/GLM-Z1-9B-0414',
+    model: 'THUDM/GLM-4-9B-0414',
     messages,
     stream: false,
     max_tokens: 256

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect x="0" y="0" width="800" height="600" fill="#e3f2fd"/>
+  
+  <!-- 主体区域 -->
+  <rect x="50" y="50" width="700" height="500" rx="15" fill="#bbdefb" stroke="#2196f3" stroke-width="3"/>
+  
+  <!-- 标题 -->
+  <text x="400" y="35" font-size="24" text-anchor="middle" font-weight="bold" fill="#0d47a1">菜鸟驿站分区布局图</text>
+  
+  <!-- 货架区 -->
+  <!-- A区货架 -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="200" height="60" fill="#64b5f6" stroke="#1976d2" stroke-width="2"/>
+    <text x="100" y="35" font-size="18" text-anchor="middle" fill="#ffffff">A区货架</text>
+    <!-- 格子 -->
+    <line x1="50" y1="0" x2="50" y2="60" stroke="#1976d2" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="60" stroke="#1976d2" stroke-width="1"/>
+    <line x1="150" y1="0" x2="150" y2="60" stroke="#1976d2" stroke-width="1"/>
+  </g>
+  
+  <!-- B区货架 -->
+  <g transform="translate(100, 200)">
+    <rect x="0" y="0" width="200" height="60" fill="#64b5f6" stroke="#1976d2" stroke-width="2"/>
+    <text x="100" y="35" font-size="18" text-anchor="middle" fill="#ffffff">B区货架</text>
+    <!-- 格子 -->
+    <line x1="50" y1="0" x2="50" y2="60" stroke="#1976d2" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="60" stroke="#1976d2" stroke-width="1"/>
+    <line x1="150" y1="0" x2="150" y2="60" stroke="#1976d2" stroke-width="1"/>
+  </g>
+  
+  <!-- C区货架 -->
+  <g transform="translate(100, 300)">
+    <rect x="0" y="0" width="200" height="60" fill="#64b5f6" stroke="#1976d2" stroke-width="2"/>
+    <text x="100" y="35" font-size="18" text-anchor="middle" fill="#ffffff">C区货架</text>
+    <!-- 格子 -->
+    <line x1="50" y1="0" x2="50" y2="60" stroke="#1976d2" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="60" stroke="#1976d2" stroke-width="1"/>
+    <line x1="150" y1="0" x2="150" y2="60" stroke="#1976d2" stroke-width="1"/>
+  </g>
+  
+  <!-- D区货架 -->
+  <g transform="translate(100, 400)">
+    <rect x="0" y="0" width="200" height="60" fill="#64b5f6" stroke="#1976d2" stroke-width="2"/>
+    <text x="100" y="35" font-size="18" text-anchor="middle" fill="#ffffff">D区货架</text>
+    <!-- 格子 -->
+    <line x1="50" y1="0" x2="50" y2="60" stroke="#1976d2" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="60" stroke="#1976d2" stroke-width="1"/>
+    <line x1="150" y1="0" x2="150" y2="60" stroke="#1976d2" stroke-width="1"/>
+  </g>
+  
+  <!-- 右侧大型货架 -->
+  <g transform="translate(400, 100)">
+    <rect x="0" y="0" width="300" height="360" fill="#90caf9" stroke="#1976d2" stroke-width="2"/>
+    <text x="150" y="30" font-size="20" text-anchor="middle" fill="#01579b">大件快递区</text>
+    
+    <!-- 横向格子线 -->
+    <line x1="0" y1="60" x2="300" y2="60" stroke="#1976d2" stroke-width="1"/>
+    <line x1="0" y1="120" x2="300" y2="120" stroke="#1976d2" stroke-width="1"/>
+    <line x1="0" y1="180" x2="300" y2="180" stroke="#1976d2" stroke-width="1"/>
+    <line x1="0" y1="240" x2="300" y2="240" stroke="#1976d2" stroke-width="1"/>
+    <line x1="0" y1="300" x2="300" y2="300" stroke="#1976d2" stroke-width="1"/>
+    
+    <!-- 竖向格子线 -->
+    <line x1="100" y1="0" x2="100" y2="360" stroke="#1976d2" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="360" stroke="#1976d2" stroke-width="1"/>
+  </g>
+  
+  <!-- 服务台 -->
+  <g transform="translate(350, 500)">
+    <rect x="0" y="0" width="100" height="50" rx="10" fill="#2196f3" stroke="#0d47a1" stroke-width="2"/>
+    <text x="50" y="30" font-size="14" text-anchor="middle" fill="#ffffff">服务台</text>
+  </g>
+  
+  <!-- 入口 -->
+  <g transform="translate(700, 300)">
+    <rect x="0" y="0" width="60" height="100" fill="#e3f2fd" stroke="#0d47a1" stroke-width="3" stroke-dasharray="8 4"/>
+    <text x="30" y="130" font-size="14" text-anchor="middle" fill="#0d47a1">入口</text>
+  </g>
+  
+  <!-- 标注 -->
+  <g transform="translate(650, 100)">
+    <rect x="0" y="0" width="100" height="150" rx="5" fill="#ffffff" stroke="#0d47a1" stroke-width="1"/>
+    <text x="50" y="25" font-size="12" text-anchor="middle" font-weight="bold" fill="#0d47a1">图例</text>
+    
+    <!-- 标注项1 -->
+    <rect x="10" y="40" width="20" height="15" fill="#64b5f6" stroke="#1976d2" stroke-width="1"/>
+    <text x="40" y="53" font-size="10" text-anchor="start" fill="#0d47a1">普通货架</text>
+    
+    <!-- 标注项2 -->
+    <rect x="10" y="70" width="20" height="15" fill="#90caf9" stroke="#1976d2" stroke-width="1"/>
+    <text x="40" y="83" font-size="10" text-anchor="start" fill="#0d47a1">大件区</text>
+    
+    <!-- 标注项3 -->
+    <rect x="10" y="100" width="20" height="15" fill="#2196f3" stroke="#0d47a1" stroke-width="1"/>
+    <text x="40" y="113" font-size="10" text-anchor="start" fill="#0d47a1">服务台</text>
+  </g>
+  
+  <!-- 底部信息 -->
+  <text x="400" y="580" font-size="12" text-anchor="middle" fill="#0d47a1">菜鸟驿站 - 校园快递中心</text>
+</svg> 

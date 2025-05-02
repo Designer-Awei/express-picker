@@ -3,19 +3,25 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import { DownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import styles from '../styles/Home.module.css';
 
-const MAP_OPTIONS = [
+export const MAP_OPTIONS = [
   { label: '总图-快递中心', value: 'demo-map.svg' },
   { label: '分区-菜鸟驿站', value: 'cainiao.svg' },
   { label: '分区-韵达京东', value: 'yunda-jd.svg' },
   { label: '分区-顺丰快递', value: 'sf.svg' },
 ];
 
+interface MapSectionProps {
+  selectedMap: string;
+  onMapChange: (map: string) => void;
+}
+
 /**
  * 地图显示区域组件
+ * @param {string} selectedMap - 当前选中的地图
+ * @param {function} onMapChange - 地图变更回调
  * @returns {JSX.Element} 返回包含可切换地图、指北针和地图SVG的区域
  */
-export default function MapSection() {
-  const [selectedMap, setSelectedMap] = useState('demo-map.svg');
+export default function MapSection({ selectedMap = 'demo-map.svg', onMapChange }: MapSectionProps) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   /**
@@ -23,7 +29,7 @@ export default function MapSection() {
    * @param {string} value 地图文件名
    */
   function handleSelect(value: string) {
-    setSelectedMap(value);
+    onMapChange(value);
     setDropdownOpen(false);
   }
 
