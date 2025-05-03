@@ -34,7 +34,7 @@ export default function MapSection({ selectedMap = 'demo-map.svg', onMapChange }
   }
 
   return (
-    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 24 }}>
+    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
       {/* 顶部栏：地图选择器+指北针 */}
       <div style={{ display: 'flex', width: '92vw', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
         {/* 地图选择器 */}
@@ -71,7 +71,7 @@ export default function MapSection({ selectedMap = 'demo-map.svg', onMapChange }
         </div>
       </div>
       {/* 地图显示区，支持缩放与拖动 */}
-      <div style={{ width: '92vw', height: '45vw', background: '#fff', border: '2px solid #222', borderRadius: 18, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ width: '92vw', height: '50vw', background: '#fff', border: '2px solid #222', borderRadius: 18, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <TransformWrapper
           initialScale={1}
           minScale={0.5}
