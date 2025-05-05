@@ -71,7 +71,7 @@ export default function MapSection({ selectedMap = 'demo-map.svg', onMapChange }
         </div>
       </div>
       {/* 地图显示区，支持缩放与拖动 */}
-      <div style={{ width: '92vw', height: '50vw', background: '#fff', border: '2px solid #222', borderRadius: 18, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ width: '92vw', height: '60vw', background: '#fff', border: '2px solid #222', borderRadius: 18, overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <TransformWrapper
           initialScale={1}
           minScale={0.5}
