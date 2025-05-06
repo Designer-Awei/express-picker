@@ -7,10 +7,33 @@
 }
 
 .section {
-  width: 100%;
+  width: 92vw;
   padding: 16px;
   background: white;
   margin-bottom: 1px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionNoPadding {
+  width: 92vw;
+  padding: 0;
+  background: white;
+  margin-bottom: 1px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 自定义标签样式，使标签铺满容器宽度 */
+.fullWidthTabs :global(.ant-tabs-nav) :global(.ant-tabs-nav-list) {
+  width: 100%;
+  display: flex;
+}
+
+.fullWidthTabs :global(.ant-tabs-nav) :global(.ant-tabs-nav-list) :global(.ant-tabs-tab) {
+  flex: 1;
+  justify-content: center;
+  margin: 0;
 }
 
 .contentContainer {
