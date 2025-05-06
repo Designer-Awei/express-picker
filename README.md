@@ -1,5 +1,7 @@
 # 快速取件导航单页面Web应用
 
+👉 [在线体验地址（kuaidizhushou.xyz）](https://kuaidizhushou.xyz)
+
 本项目基于 Next.js + TypeScript，旨在为校内快递中心提供快递码识别、货架导航、自助出库及出库记录等功能，提升取件效率。所有数据均存储于本地 localStorage，保障隐私与易用性。
 
 ## 项目结构
@@ -133,3 +135,9 @@ express-picker/
 
 ---
 > 本项目以两天开发周期为目标，优先保证核心功能可用，非核心功能可后续迭代完善。
+
+---
+
+## 在线体验
+
+👉 [https://kuaidizhushou.xyz](https://kuaidizhushou.xyz)

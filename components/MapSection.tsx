@@ -4,7 +4,7 @@ import { DownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import styles from '../styles/Home.module.css';
 
 export const MAP_OPTIONS = [
-  { label: '总图-快递中心', value: 'demo-map.svg' },
+  { label: '总图-快递中心', value: 'total-map.svg' },
   { label: '分区-菜鸟驿站', value: 'cainiao.svg' },
   { label: '分区-韵达京东', value: 'yunda-jd.svg' },
   { label: '分区-顺丰快递', value: 'sf.svg' },
@@ -21,7 +21,7 @@ interface MapSectionProps {
  * @param {function} onMapChange - 地图变更回调
  * @returns {JSX.Element} 返回包含可切换地图、指北针和地图SVG的区域
  */
-export default function MapSection({ selectedMap = 'demo-map.svg', onMapChange }: MapSectionProps) {
+export default function MapSection({ selectedMap = 'total-map.svg', onMapChange }: MapSectionProps) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   /**

@@ -46,7 +46,7 @@ function getAreaWeight(area: string, selectedMap: string): number {
   const defaultOrder = ['菜鸟', '韵达', '顺丰', '其他'];
   
   // 如果是总览图，则按默认顺序
-  if (selectedMap === 'demo-map.svg') {
+  if (selectedMap === 'total-map.svg') {
     for (let i = 0; i < defaultOrder.length; i++) {
       if (area.includes(defaultOrder[i])) return i;
     }
@@ -57,7 +57,7 @@ function getAreaWeight(area: string, selectedMap: string): number {
   // 当前选中的分区放最前面
   for (const option of MAP_OPTIONS) {
     // 跳过总图
-    if (option.value === 'demo-map.svg') continue;
+    if (option.value === 'total-map.svg') continue;
     
     // 如果是当前选中的地图，对应分区权重为0
     if (option.value === selectedMap && area.includes(option.label.split('-')[1])) {
@@ -86,7 +86,7 @@ function getAreaWeight(area: string, selectedMap: string): number {
 export default function PendingDeliverySection({ 
   pendingDeliveries = [], 
   onDelete,
-  selectedMap = 'demo-map.svg',
+  selectedMap = 'total-map.svg',
   onPickup,
   deliveryRecords: propDeliveryRecords,
   onDeleteRecord

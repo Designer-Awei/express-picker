@@ -17,7 +17,7 @@ export default function Home() {
   const [pendingDeliveries, setPendingDeliveries] = useState<PendingDelivery[]>([]);
   const [deliveryRecords, setDeliveryRecords] = useState<DeliveryRecord[]>([]);
   const [isClient, setIsClient] = useState(false);
-  const [selectedMap, setSelectedMap] = useState('demo-map.svg');
+  const [selectedMap, setSelectedMap] = useState('total-map.svg');
   const [pickupModalVisible, setPickupModalVisible] = useState(false);
   const [selectedDelivery, setSelectedDelivery] = useState<PendingDelivery | null>(null);
 
