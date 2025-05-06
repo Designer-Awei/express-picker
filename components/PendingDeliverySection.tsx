@@ -128,7 +128,7 @@ export default function PendingDeliverySection({
   // 完成取件后自动切换到取件历史标签
   useEffect(() => {
     if (propDeliveryRecords && propDeliveryRecords.length > 0 && deliveryRecords.length < propDeliveryRecords.length) {
-      setActiveTab('history');
+      setActiveTab('pending');
     }
   }, [propDeliveryRecords, deliveryRecords.length]);
 
